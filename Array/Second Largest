@@ -1,0 +1,21 @@
+class Solution {
+    public int print2largest(int[] arr) {
+        
+        // Code Here
+        int max=-1;
+        int submax=-1;
+        for(int i=0;i<arr.length;i++){
+            if(max<arr[i]){
+                submax=max;
+                max=arr[i];
+            }else if(submax<arr[i] && max!=arr[i]){
+                submax=arr[i];
+            }
+        }
+        
+        
+        return submax;
+        
+        
+    }
+}
