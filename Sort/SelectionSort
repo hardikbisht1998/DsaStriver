@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner myScan=new Scanner(System.in);
+        int size=myScan.nextInt();
+
+        System.out.println(size);
+        int [] arr=new int[size];
+
+        for(int i=0;i<size;i++){
+            arr[i]=myScan.nextInt();
+        }
+
+        for(int i=0;i<size;i++){
+            System.out.print(arr[i]);
+            System.out.print("  ");
+        }
+
+        System.out.println("SELECTION SORT");
+
+//        ===============================Selection Sort================================
+        for(int i=0;i<size-1;i++){
+            int mini=i;
+            for(int j=i;j<size;j++){
+                if(arr[mini]>arr[j]){
+                    mini=j;
+                }
+            }
+            // swap
+//            arr[i]=arr[i]+arr[mini];
+//            arr[mini]=arr[i]-arr[mini];
+//            arr[i]=arr[i]-arr[mini];
+
+//           Swap2
+            int temp=arr[mini];
+            arr[mini]=arr[i];
+            arr[i]=temp;
+        }
+
+//        ========================================================================
+
+        for(int i=0;i<size;i++){
+            System.out.print(arr[i]);
+            System.out.print("  ");
+        }
+
+    }
+
+
+
+
+}
